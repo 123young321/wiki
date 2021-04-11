@@ -20,6 +20,7 @@
         "-highlight",
         "-livereload",
         "-sharing",
+        "code@0.1.0",
         "search-plus@^0.0.11"
      ]
 }
