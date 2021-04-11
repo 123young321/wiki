@@ -14,7 +14,14 @@
     "styles":{
       "website":"styles/website.css"
     },
-
+    "plugins": [
+        "-lunr",
+        "-search",
+        "-highlight",
+        "-livereload",
+        "-sharing",
+        "search-plus@^0.0.11"
+     ]
 }
 
 
