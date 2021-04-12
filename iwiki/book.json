@@ -21,6 +21,9 @@
         "-livereload",
         "-sharing",
         "code@0.1.0",
+        "hide-element@0.0.4",
+	"splitter@^0.0.8",
+	"advanced-emoji@0.2.2",
         "search-plus@^0.0.11"
      ]
 }
