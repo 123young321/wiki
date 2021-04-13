@@ -25,7 +25,29 @@
 	"splitter@^0.0.8",
 	"advanced-emoji@0.2.2",
         "search-plus@^0.0.11"
-     ]
+     ],
+     "pluginsConfig": {
+        "tbfed-pagefooter": {
+       	    "copyright":"该文档最后更新人 lipanpan03 ",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+       },
+        "anchor-navigation-ex": {
+	    "floatIcon": "fa fa-navicon",
+            "isRewritePageTitle": false,
+            "tocLevel1Icon": "fa fa-hand-o-right",
+            "tocLevel2Icon": "fa fa-hand-o-right",
+            "tocLevel3Icon": "fa fa-hand-o-right",
+	    "showGoTop": false
+        },
+        "hide-element": {
+            "elements": [".gitbook-link"]
+        },
+       "insert-logo": {
+            "url": "assets/images/logo.png",
+     	    "style": "background: none; max-height: 30px; min-height: 30px"
+       }
+      }
 }
 
 
