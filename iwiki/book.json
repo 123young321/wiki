@@ -24,7 +24,8 @@
         "hide-element@0.0.4",
 	"splitter@^0.0.8",
 	"advanced-emoji@0.2.2",
-        "search-plus@^0.0.11"
+        "search-plus@^0.0.11",
+	"flexible-alerts@1.0.3"
      ],
      "pluginsConfig": {
         "tbfed-pagefooter": {
@@ -46,7 +47,15 @@
        "insert-logo": {
             "url": "assets/images/logo.png",
      	    "style": "background: none; max-height: 30px; min-height: 30px"
-       }
+       },
+       "flexible-alerts": {
+      	    "style": "callout",
+      	    "comment": {
+            "label": "Comment",
+            "icon": "fa fa-comments",
+            "className": "info"
+      }
+    }
       }
 }
 
