@@ -8,9 +8,9 @@
 
 
 
-## Mac安装Go
+## Mac安装Golang
 
-### 下载并安装
+### 下载 & 安装
 
 官网地址：https://golang.google.cn/dl/
 
@@ -56,13 +56,19 @@ lipanpan@lipanpandeMacBook-Pro gocode % tree -L 1
 export GOROOT=/usr/local/go
 ```
 
-5. GOPATH : 项目中 bin 目录 当我们使用 go install 命令进行代码编译的时候 可执行的文件会生成到这个目录
+5. GOPATH : 个人开发所创建的目录 
+
+```shell
+export GOPATH=/Users/lipanpan/code/gocode/
+```
+
+6. GOBIN : 项目中 bin 目录 编译后的可执行文件
 
 ```shell
 export GOPATH=/Users/lipanpan/code/gocode/bin
 ```
 
-6. 加载环境变量
+7. 加载环境变量
 
 ```shell
 source /etc/profile
@@ -76,7 +82,7 @@ vim .bash_profile
 
 ```
 
-#### 编写Go代码
+#### 编写Golang代码
 
 编写代码的时候需要在`src`下进行编写
 
@@ -99,11 +105,51 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Printf("人生苦短，Let us go")
+	fmt.Println("人生苦短，Let us go")
 }
 ```
 
-#### 运行代码
+### 运行代码
+
+#### Golang运行代码三种方式
+
+go运行的三种方式分别为  `go run` `go build` `go install` 
+
+##### go run 命令
+
+go run 编译源码，并且执行源码的main函数，不会再当前目录下留下可执行文件
+
+```shell
+lipanpan@lipanpandeMacBook-Pro grammer % go run quick_start.go
+人生苦短，Let us go
+```
+
+##### go build 命令
+
+go build 有多种编译方法，无参数编译，文件列表编译，指定包编译等 
+
+```go
+lipanpan@lipanpandeMacBook-Pro grammer % go build quick_start.go 
+lipanpan@lipanpandeMacBook-Pro grammer % ll
+-rwxr-xr-x  1 lipanpan  staff   1.9M  4 14 23:34 quick_start
+-rw-r--r--  1 lipanpan  staff    85B  4 14 23:22 quick_start.go
+lipanpan@lipanpandeMacBook-Pro grammer % ./quick_start 
+人生苦短，Let us go
+```
+
+常用的参数：
+
+ 
+
+参考地址 ：go build 的详细使用方式方法请参考该地址 ：http://c.biancheng.net/view/120.html
+
+
+
+##### go install 命令
+
+
+
+
 
 
 
