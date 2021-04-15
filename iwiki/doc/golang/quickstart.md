@@ -30,10 +30,10 @@
 
 2. 项目跟目录中分别创建 bin pkg src 三个目录
 
-   + bin 用于存放编译后的可执行文件
+   + **bin** 用于存放编译后的可执行文件
 
-   + pkg 用于存放编译后的包文件
-   + src  源代码
+   + **pkg** 用于存放编译后的包文件
+   + **src**  源代码
 
 ```
 lipanpan@lipanpandeMacBook-Pro gocode % tree -L 1
@@ -97,7 +97,7 @@ lipanpan@lipanpandeMacBook-Pro grammer % tree -I "go_pointer|go_map|go_array|go_
 
 ```
 
-编写属于你的第一段go程序
+编写属于你的第一段 go 程序
 
 ```go
 package main
@@ -115,7 +115,7 @@ func main() {
 
 go运行的三种方式分别为  `go run` `go build` `go install` 
 
-##### go run 命令
+##### go run
 
 go run 编译源码，并且执行源码的main函数，不会再当前目录下留下可执行文件
 
@@ -124,7 +124,7 @@ lipanpan@lipanpandeMacBook-Pro grammer % go run quick_start.go
 人生苦短，Let us go
 ```
 
-##### go build 命令
+##### go build
 
 go build 有多种编译方法，无参数编译，文件列表编译，指定包编译等 
 
