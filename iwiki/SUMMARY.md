@@ -16,7 +16,7 @@
 
 ---
 
-[Jenkins](doc/jenkins/README.md)
+* [Jenkins](doc/jenkins/README.md)
     * [1.1 安装](doc/jenkins/install.md)
     * [1.2 Jenkins集成GitHub](doc/jenkins/integrategithub.md)
 
