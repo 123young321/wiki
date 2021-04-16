@@ -24,6 +24,7 @@
         "search-plus@^0.0.11",
 	"-todo@^0.1.3",
 	"page-treeview@3.0.3",
+	"donate@1.0.2",
 	"flexible-alerts@1.0.3"
      ],
      "pluginsConfig": {
@@ -31,7 +32,7 @@
        	    "copyright":"该文档最后更新人 lipanpan03 ",
             "modify_label": "该文件修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
-       },
+         },
         "anchor-navigation-ex": {
 	    "floatIcon": "fa fa-navicon",
             "isRewritePageTitle": false,
@@ -39,27 +40,35 @@
             "tocLevel2Icon": "fa fa-hand-o-right",
             "tocLevel3Icon": "fa fa-hand-o-right",
 	    "showGoTop": false
-        },
+         },
         "hide-element": {
             "elements": [".gitbook-link"]
-        },
-       "insert-logo": {
+         },
+        "insert-logo": {
             "url": "assets/images/logo.png",
      	    "style": "background: none; max-height: 30px; min-height: 30px"
-       },
-       "flexible-alerts": {
+         },
+         "flexible-alerts": {
       	    "style": "callout",
       	    "comment": {
             "label": "Comment",
             "icon": "fa fa-comments",
             "className": "info"
-	     }
-	},
-       "page-treeview": {
+	    }
+	 },
+         "page-treeview": {
             "copyright": "Copyright &#169; aleen42",
             "minHeaderCount": "2",
             "minHeaderDeep": "2"
-        }	
+         },
+	 "donate": {
+            "wechat": "微信收款的二维码URL",
+            "alipay": "支付宝收款的二维码URL",
+            "title": "",
+            "button": "赏",
+            "alipayText": "支付宝打赏",
+            "wechatText": "微信打赏"
+         }	
       }
 }
 
