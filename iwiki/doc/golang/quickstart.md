@@ -16,18 +16,14 @@
 1. 创建项目的根目录
 
 2. 项目跟目录中分别创建 bin pkg src 三个目录
-   + **bin** 用于存放编译后的可执行文件
-   + **pkg** 用于存放编译后的包文件
-   + **src**  源代码
 
-    ```shell
-    lipanpan@lipanpandeMacBook-Pro gocode % tree -L 1
+   ```shell
     .
     ├── README.md
-    ├── bin   
-    ├── pkg
-    └── src
-    ```
+    ├── bin         # 用于存放编译后的可执行文件
+    ├── pkg         # 用于存放编译后的包文件
+    └── src         # 源代码
+   ```
 
 3. 配置系统环境变量 将go编译器的路径添加到环境变量 使用go命令可以直接调用自己编写的源代码 (安装时默认已执行)
 
@@ -56,43 +52,41 @@
 7. 加载环境变量
 
    ```shell
-     source /etc/profile
+   source /etc/profile
    ```
 
 注意：上述的方法为临时修改环境变量，如果想要永久修改环境变量，可以把环境变量添加到 `.bash_profile` 如若没有可以自行创建
 
-```shell
-cd 
-vim .bash_profile
-
-```
+   ```shell
+   cd 
+   vim .bash_profile
+   ```
 
 #### 编写Golang代码
 
-编写代码的时候需要在`src`下进行编写
+1. 编写代码的时候需要在`src`下进行编写
 
-```shell
-lipanpan@lipanpandeMacBook-Pro grammer % tree -I "go_pointer|go_map|go_array|go_function|go_constant|go_slice|go_struct|go_condition" -L 5
-.
-├── go_operation
-│   └── main.go
-├── go_variable
-│   └── main.go
-└── quick_start.go
+   ```shell
+   tree -I "go_pointer|go_map|go_array|go_function|go_constant|go_slice|go_struct|go_condition" -L 5
+   .
+   ├── go_operation
+   │   └── main.go
+   ├── go_variable
+   │   └── main.go
+   └── quick_start.go
+   ```
 
-```
+2. 编写属于你的第一段 go 程序
 
-编写属于你的第一段 go 程序
+   ```go
+   package main
 
-```go
-package main
+   import "fmt"
 
-import "fmt"
-
-func main() {
-	fmt.Println("人生苦短，Let us go")
-}
-```
+   func main() {
+      fmt.Println("人生苦短，Let us go")
+   }
+   ```
 
 ### 运行代码
 
