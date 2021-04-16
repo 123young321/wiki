@@ -10,6 +10,7 @@
     * [1.2 变量](doc/golang/variable.md)
 ---
 * [Javascript](doc/javascript/README.md)
+    * [1.1 对象](doc/javascript/object.md)
 ---
 [Jenkins](doc/jenkins/README.md)
     * [1.1 前言](doc/jenkins/README.md)
