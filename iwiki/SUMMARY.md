@@ -7,7 +7,7 @@
 ---
 * [Golang](doc/golang/README.md)
     * [1.1 环境搭建](doc/golang/quickstart.md)
-    * [1.2 变量 & 常量](doc/golang/fmt&var&const.md)
+    * [1.2 变量](doc/golang/variable.md)
 
 ---
 * [1.1 前言](doc/javascript/README.md)
