@@ -10,8 +10,8 @@
 
 ---
 
-* [Javascript](doc/javascript/README.md)
-    * [1.1 对象](doc/javascript/object.md)
+* [Javascript](doc/javaScript/README.md)
+    * [1.1 对象](doc/javaScript/object.md)
 
 ---
 
