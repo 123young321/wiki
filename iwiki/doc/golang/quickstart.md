@@ -6,13 +6,14 @@
 
 默认的安装目录 : `/usr/local/go`
 
-### 配置环境变量
+### 环境变量
 
 ```shell
  export PATH=/usr/local/go/bin:$PATH
 ```
 ### 创建项目
-#### 项目目录介绍
+#### 项目目录
+
 1. 创建项目的根目录
 
 2. 项目跟目录中分别创建 bin pkg src 三个目录
@@ -31,13 +32,13 @@
    export PATH=/usr/local/go/bin:$PATH
    ```
 
-4. GOROOT : Go源码目录，用于调用Go相关源码
+4. GOROOT : Go源码目录
 
    ```shell
    export GOROOT=/usr/local/go
    ```
 
-5. GOPATH : 个人开发所创建的目录 
+5. GOPATH : 项目目录
 
    ```shell
    export GOPATH=/Users/lipanpan/code/gocode/
@@ -62,7 +63,7 @@
    vim .bash_profile
    ```
 
-#### 编写Golang代码
+#### 代码编写
 
 1. 编写代码的时候需要在`src`下进行编写
 
@@ -90,7 +91,7 @@
 
 ### 运行代码
 
-#### Golang运行代码三种方式
+#### 运行的三种方式
 
 go运行的三种方式分别为  `go run` `go build` `go install` 
 

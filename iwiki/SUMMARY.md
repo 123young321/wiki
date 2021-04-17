@@ -7,6 +7,7 @@
 * [Golang](doc/golang/README.md)
     * [1.1 环境搭建](doc/golang/quickstart.md)
     * [1.2 变量](doc/golang/variable.md)
+    * [1.3 数据类型](doc/golang/datatype.md)
 
 ---
 
