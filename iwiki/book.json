@@ -64,7 +64,7 @@
             "minHeaderDeep": "2"
          },
 	 "donate": {
-            "wechat": "微信收款的二维码URL",
+            "wechat": "http://39.105.100.168:8888/images/alipay.jpeg",
             "alipay": "支付宝收款的二维码URL",
             "title": "",
             "button": "赏",
