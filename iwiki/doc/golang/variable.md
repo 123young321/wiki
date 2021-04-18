@@ -218,12 +218,12 @@ lee 0 // 0 表示的是 int 的默认值
 	// lee 1
 
 // 基于条件判断对返回值进行检查判断
-	_, err := fmt.Scan(&name, &age) // 注意此处的下划线
-	if err == nil {
-		fmt.Println("输入成功")
-	} else {
-		fmt.Println("输入的信息有误", err)
-	}
+_, err := fmt.Scan(&name, &age) // 注意此处的下划线
+if err == nil {
+  fmt.Println("输入成功")
+} else {
+  fmt.Println("输入的信息有误", err)
+}
 ```
 
 示例2：`fmt.Scanf` 格式化输出 返回值 `count,err`
