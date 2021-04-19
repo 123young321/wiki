@@ -2,8 +2,6 @@
 
 ## ceshi
 ## ceshi
-## ceshi
-## ceshi
 
 ## 基本操作
 
