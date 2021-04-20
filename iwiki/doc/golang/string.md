@@ -20,7 +20,6 @@ fmt.Println(name[1], strconv.FormatInt(int64(name[1]), 2)) // 10011101
 fmt.Println(name[2], strconv.FormatInt(int64(name[2]), 2)) // 10001110
 // 字符串的长度 9 : 表示的是 utf-8编码的字节长度
 fmt.Println(len(name))
-
 ```
 ## 基本操作
 示例：字符串不可改变
