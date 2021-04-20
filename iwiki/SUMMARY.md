@@ -4,6 +4,7 @@
 
 ---
 * [Python](doc/python/README.md)
+    * [Python操作MySQL](doc/python/mysql.md)
     * [1.1 Celery](doc/python/celery/README.md)
         * [1.1.1 安装](doc/python/celery/install.md)
     * [1.2 Django](doc/python/django/README.md)
