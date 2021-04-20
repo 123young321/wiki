@@ -36,10 +36,10 @@ fmt.Println(text[0])
 text := "this is string"
 //text[0] = "that" // ./main.go:24:10: cannot assign to text[0] (strings are immutable)
 fmt.Println(text[0])
-text2 := `
+text2 := \`
 dear name
     hello! 
-`
+\`
 fmt.Println(text2)
 text3 := "info \n T"
 fmt.Print(text3)
