@@ -32,7 +32,7 @@ fmt.Println(text[0])
 ```
 示例：字符串的转义字符
 + 字符串支持常见的转义字符 
-+ 反引号 `\`\``包裹的字符串会原样输出
++ 反引号包裹的字符串会原样输出
 ```go
 text := "this is string"
 //text[0] = "that" // ./main.go:24:10: cannot assign to text[0] (strings are immutable)
