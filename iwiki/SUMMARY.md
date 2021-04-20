@@ -6,6 +6,8 @@
 * [Python](doc/python/README.md)
     * [1.1 Celery](doc/python/celery/README.md)
         * [1.1.1 安装](doc/python/celery/install.md)
+    * [1.2 Django](doc/python/django/README.md)
+        * [1.2.1 安装](doc/python/django/install.md)
 ---
 
 * [Golang](doc/golang/README.md)
