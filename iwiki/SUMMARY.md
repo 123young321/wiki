@@ -1,7 +1,9 @@
 # Summary
 
 * [简介](README.md)
-
+---
+* [Python](doc/python/README.md)
+    * [1.1 Celery](doc/python/celery/README.md)
 ---
 * [Golang](doc/golang/README.md)
     * [1.1 环境搭建](doc/golang/quickstart.md)
@@ -20,7 +22,7 @@
 ---
 * [Linux](doc/linux/README.md)
     * [1.1 环境变量](doc/linux/install.md)
-    * [1.2 用户管理](doc/linux/integrategithub.md)
+    * [1.2 用户管理](doc/linux/user.md)
     * [1.3 定时任务](doc/linux/cortab.md)
 ---
 * [小程序](doc/wx/README.md)
