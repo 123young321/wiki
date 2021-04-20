@@ -2,6 +2,8 @@
 
 字符串是一个不可改变的字节序列，Go中的String通常是用来包含人类可读的文本，文本中字符串通常被解释为UTF8编码的Unicode码点，Go的字符串是由单个字节连接起来的
 
+## 字符串的本质
+
 
 
 示例：字符串的本质 utf-8 编码的字节序列
@@ -22,6 +24,91 @@ fmt.Println(name[2], strconv.FormatInt(int64(name[2]), 2)) // 10001110
 fmt.Println(len(name))
 ```
 ## 基本操作
+
+
+
+### 字符串的长度
+
+```go
+
+```
+
+### 是否已xx开头 `HasPrefix`
+
+```go
+var baidu string = "www.baidu.com"
+google := "www.google.com"
+fmt.Println(baidu, google)
+// 是否 以 www 开头
+fmt.Println(strings.HasPrefix(baidu,"www")) // true
+```
+
+### 是否以xx结尾 `HasSuffix`
+
+```go
+fmt.Println(strings.HasSuffix(baidu,"com"))
+```
+
+### 是否包含 `Contains`
+
+```go
+fmt.Println(strings.Contains(google,"google")) // true
+```
+
+### 变大写 `ToUpper`
+
+```go
+fmt.Println(strings.ToUpper(baidu)) // WWW.BAIDU.COM
+```
+
+### 变小写 `ToLower`
+
+```go
+job := "DBA"
+fmt.Println(strings.ToLower(job)) // dba
+```
+
+### 去两边 ``
+
+```go
+
+```
+
+### 首字母大写 `Title`
+
+```go
+title := "hello"
+fmt.Println(strings.Title(title)) // Hello
+```
+
+### 替换
+
+```go
+
+```
+
+### 分割
+
+```go
+
+```
+
+### 拼接
+
+```go
+
+```
+
+
+
+
+
+
+
+
+
+
+
 示例：字符串不可改变
 
 ```go
@@ -32,6 +119,9 @@ fmt.Println(text[0])
 示例：字符串的转义字符
 + 字符串支持常见的转义字符 
 + 反引号包裹的字符串会原样输出，即使存在空格，换行符号等
+
+
+
 ```go
 text := "this is string"
 //text[0] = "that" // ./main.go:24:10: cannot assign to text[0] (strings are immutable)

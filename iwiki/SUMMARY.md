@@ -8,7 +8,7 @@
     * [1.2 变量](doc/golang/variable.md)
     * [1.3 数据类型](doc/golang/datatype.md)
     * [1.4 String](doc/golang/string.md)
-    
+    * [1.5 指针](doc/golang/pointer.md)
 ---
 * [JavaScript](doc/javascript/README.md)
     * [1.1 对象](doc/javascript/object.md)
