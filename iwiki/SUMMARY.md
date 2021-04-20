@@ -4,6 +4,7 @@
 ---
 * [Python](doc/python/README.md)
     * [1.1 Celery](doc/python/celery/README.md)
+        * [1.1.1 安装](doc/python/celery/install.md)
 ---
 * [Golang](doc/golang/README.md)
     * [1.1 环境搭建](doc/golang/quickstart.md)
