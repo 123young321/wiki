@@ -31,24 +31,13 @@ fmt.Println(text[0])
 ```
 示例：字符串的转义字符
 + 字符串支持常见的转义字符 
-+ 反引号包裹的字符串会原样输出
++ 反引号包裹的字符串会原样输出，即使存在空格，换行符号等
 ```go
 text := "this is string"
 //text[0] = "that" // ./main.go:24:10: cannot assign to text[0] (strings are immutable)
 fmt.Println(text[0])
-text2 := \`
-dear name
-    hello! 
-\`
-fmt.Println(text2)
 text3 := "info \n T"
 fmt.Print(text3)
-
-        dear name
-                hello! 
-        
-info 
- T
 ```
 示例：字符串的拼接
 ```go
