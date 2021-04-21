@@ -108,7 +108,52 @@ nameArray := [2]string{"大湿胸", "小师妹"}
 nameArray[1] = "小湿妹"
 fmt.Println(nameArray)
 ```
+注意：字符串不能被修改，如果要修改字符串，使用strings.replace 此时是内部创建并重新指向新的值
 
+示例：当数组拷贝的时候，实际上会在内存中重新开辟一份空间，此时更改原数组，拷贝后的数组不会改变
+```go
+nameArray := [2]string{"大湿胸", "小师妹"}
+newNameArray := nameArray
+// 更改数组内部的元素
+nameArray[1] = "小湿妹"
+fmt.Println(nameArray) // [大湿胸 小湿妹]
+fmt.Println(newNameArray) // [大湿胸 小师妹]
+```
 
+## 数组长度索引和切片
 
+示例：数组的基本操作
++ 获取数组的长度
++ 获取数组的索引
++ 数组的切片
 
+```go
+//数组的长度
+fmt.Println(len(nameArray))
+//数组的切片
+fmt.Println(nameArray[0:1])  // 注意 索引的 下标是 0<=下标<2
+// 数组的索引
+fmt.Println(nameArray[0])
+```
+注意：数组的切片一定注意范围
+
+示例：数组的循环 
++ `for ...range...`
++ `for index,item`
+```go
+// 数组的遍历
+var cities =[5]string{"beijing","shanghai","tianjin","shenzhen"}
+fmt.Println(cities)
+// 根据索引取值 获取数组的第二个元素 shanghai
+fmt.Println(cities[1])
+// 数组的遍历
+// for 循环 遍历
+var index int
+for index =0; index < len(cities) ; index++ {
+    fmt.Println(index,cities[index]) // 注意数组的最后一个值为空
+}
+// for range 遍历
+for index,value := range cities {
+    fmt.Println(index,value)
+}
+```
