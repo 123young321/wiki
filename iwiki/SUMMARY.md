@@ -4,7 +4,7 @@
 
 ---
 * [Python](doc/python/README.md)
-    * [Python操作MySQL](doc/python/mysql.md)
+    * [Python操作数据库](doc/python/mysql.md)
     * [1.1 Celery](doc/python/celery/README.md)
         * [1.1.1 安装](doc/python/celery/install.md)
     * [1.2 Django](doc/python/django/README.md)
@@ -18,6 +18,7 @@
     * [1.4 String](doc/golang/string.md)
     * [1.5 Array](doc/golang/array.md)
     * [1.6 指针](doc/golang/pointer.md)
+    * [1.7 循环](doc/golang/loop.md)
 ---
 
 * [JavaScript](doc/javascript/README.md)

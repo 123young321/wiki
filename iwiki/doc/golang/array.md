@@ -100,7 +100,8 @@ fmt.Printf("数组的第三个元素的内存地址：%p \n", &nums32[2])
 
 ## 数组的可变和拷贝
 
-+ 数组的元素可以被更改，但是长度和类型不能更改
+数组的元素可以被更改，但是长度和类型不能更改
+
 示例：更改数组中的元素
 ```go
 nameArray := [2]string{"大湿胸", "小师妹"}
@@ -123,6 +124,7 @@ fmt.Println(newNameArray) // [大湿胸 小师妹]
 ## 数组长度索引和切片
 
 示例：数组的基本操作
+
 + 获取数组的长度
 + 获取数组的索引
 + 数组的切片
@@ -138,8 +140,11 @@ fmt.Println(nameArray[0])
 注意：数组的切片一定注意范围
 
 示例：数组的循环 
+
 + `for ...range...`
 + `for index,item`
+
+
 ```go
 // 数组的遍历
 var cities =[5]string{"beijing","shanghai","tianjin","shenzhen"}
@@ -156,4 +161,13 @@ for index =0; index < len(cities) ; index++ {
 for index,value := range cities {
     fmt.Println(index,value)
 }
+```
+
+## 数组的嵌套
+
+```go
+// [[0 0 0] [0 0 0]]
+var nestData [2][3]int // 最后面的为数组的最小单位
+nestData[0] = [3]int{66,77,88}
+fmt.Println(nestData) // [[66 77 88] [0 0 0]]
 ```
