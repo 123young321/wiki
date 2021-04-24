@@ -71,13 +71,13 @@
      	    "style": "background: none; max-height: 30px; min-height: 30px"
          },
          "flexible-alerts": {
-      	    "style": "callout",
+      	    "style": "flat",
       	    "comment": {
-            "label": "注意",
+            "label": "Comment",
             "icon": "fa fa-comments",
             "className": "info"
-	    }
-	 },
+	        }
+	    },
          "page-treeview": {
             "copyright": "Copyright &#169; aleen42",
             "minHeaderCount": "2",
