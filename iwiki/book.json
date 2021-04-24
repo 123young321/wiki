@@ -73,7 +73,7 @@
          "flexible-alerts": {
       	    "style": "callout",
       	    "comment": {
-            "label": "Comment",
+            "label": "注意",
             "icon": "fa fa-comments",
             "className": "info"
 	    }
