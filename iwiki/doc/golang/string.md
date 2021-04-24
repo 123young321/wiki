@@ -99,12 +99,23 @@ fmt.Println(strings.Title(title)) // Hello
 
 ```
 
+### 字符串格式化 `fmt.Sprintf`
+```
+// 字符串格式化
+var who, address, action string
 
+fmt.Println("请输入姓名")
+fmt.Scanln(&who)
 
+fmt.Println("请输入地址")
+fmt.Scanln(&address)
 
+fmt.Println("请输入你在干什么")
+fmt.Scanln(&action)
 
-
-
+result := fmt.Sprintf("我叫%s,在%s正在干%s", who, address, action)
+fmt.Println(result)
+```
 
 
 

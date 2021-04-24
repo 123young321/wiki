@@ -1,5 +1,5 @@
 
-# for循环
+# 循环
 
 ## Go中死循环
 
@@ -59,10 +59,9 @@ for numbers3 := 1; numbers3 < 5;numbers3=numbers3+1 { // numbers3++
 //fmt.Println(numbers3)
 ```
 
-## Go 基于 break 和 continue 打标签
+## break 和 continue 打标签
 
-对于for循环打标签，然后通过break和continue就可以实现多层循环的跳出和终止
-
+示例：对于for循环打标签，然后通过break和continue就可以实现多层循环的跳出和终止
 ```go
 // 对于golang中基于break和continue进行打标签
 f1:
@@ -70,13 +69,42 @@ f1:
 		for j := 1; j < 5; j++ {
 			if j == 3 {
 				fmt.Println("彻底跳出循环")
-				continue f1
+				continue f1 // break f1
 			}
 			fmt.Println(i, j)
 		}
 	}
 }
 ```
+
+## goto
+跳跃到指定的行，然后根据业务逻辑继续执行代码
+
+示例：goto的基本使用
+
+```go
+	var name string
+	fmt.Println("请输入姓名")
+	fmt.Scanln(&name)
+	if name == "lee" {
+		// SVIP
+		goto SVIP
+	} else if name == "people" {
+		// VIP
+		goto VIP
+	}
+
+	fmt.Println("预约...")
+VIP:
+	fmt.Println("等号...")
+SVIP:
+	fmt.Println("进入...")
+	
+```
+
+
+
+
 
 
 

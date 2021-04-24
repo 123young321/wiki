@@ -19,6 +19,7 @@
     * [1.5 Array](doc/golang/array.md)
     * [1.6 指针](doc/golang/pointer.md)
     * [1.7 循环](doc/golang/loop.md)
+    * [切片](doc/golang/slice.md)
 ---
 
 * [JavaScript](doc/javascript/README.md)
