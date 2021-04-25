@@ -38,3 +38,8 @@
 * [小程序](doc/wx/README.md)
     * [1.1 环境搭建](doc/wx/install.md)
 
+--- 
+
+* [Redis](doc/redis/REMADME.md)
+    * [安装](doc/redis/install.md)
+    
