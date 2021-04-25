@@ -1,17 +1,12 @@
 # 安装
 
-
-## 软件下载
-```
-wget -O /data/soft/redis-3.2.9.tar.gz http://download.redis.io/releases/redis-3.2.9.tar.gz
-```
 ## 目录结构规划
 
-+ 软件下载目录
++ 下载目录
 + 数据目录
 + 安装目录
 
-### 软件下载目录
+### 下载目录
 ```
 mkdir /data/soft -p
 ```
@@ -19,7 +14,7 @@ mkdir /data/soft -p
 ```
 mkdir -p /data/redis_cluster/redis_6379
 ```
-### 软件安装目录
+### 安装目录
 ```
 mkdir -p /opt/redis_cluster/redis_6379/{conf,pid,logs}
 ```
@@ -33,9 +28,15 @@ tree /opt/
         ├── logs
         └── pid
 ```
-## 解压
 
-+ 解压目录到相应的指定位置
+## 下载
+```
+wget -O /data/soft/redis-3.2.9.tar.gz http://download.redis.io/releases/redis-3.2.9.tar.gz
+```
+
+## 编译安装
+
++ 解压
 + 创建软连接
 + 安装
 
@@ -73,11 +74,10 @@ dbfilename redis_6379.rdb
 ### 本地数据库目录
 dir /data/redis_cluster/redis_6379
 ```
-注意:
-```
-# 改脚本是Redis自己提供的配置脚本(可以在原基础进行修改)
-vim /opt/redis_cluster/redis-3.2.9/utils/install_server.sh 
-```
+> [!TIP|style:flat|label:注意|iconVisibility:visible] 
+> Redis默认提供了安装脚本可以在此基础进行更改
+> vim /opt/redis_cluster/redis-3.2.9/utils/install_server.sh 
+
 ## 启动Redis
 ```
 redis-server /opt/redis_cluster/redis_6379/conf/redis_6379.conf
