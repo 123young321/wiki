@@ -61,7 +61,12 @@ def add(x, y):
     return x + y
 ```
 
-### 应用的配置
+### 模块化的应用
+
+
+
+
+## 应用的配置
 
 Celery中的应用配置可以分为三种方式
 
@@ -159,7 +164,7 @@ User information: uid=0 euid=0 gid=0 egid=0
 
 
 
-#### 运行 Worker 服务器
+## 运行 Worker
 ```
 celery -A tasks worker --loglevel=INFO
 
@@ -195,19 +200,21 @@ User information: uid=0 euid=0 gid=0 egid=0
   . tasks.add
 
 ```
+
 ## 调用任务
 
 调用任务的时候会返回 AsyncResult 对象
+
 图示：返回 AsyncResult 对象，对象封装了任务的结果的各种状态
 
-
+![backend](http://39.105.100.168:8888/images/celery_install_task_delay.png)
 
 获取返回结果，如果想要获取返回结果，需要配置我们的结果存储的方式，如果不进行配置则获取结果会报错
+
 图示：如果相应的任务实例不配置 backend 则获取函数的结果会报错
 
 
-
-
+![AsyncResult](http://39.105.100.168:8888/images/celery_install_asyncResult.png)
 
 
 
@@ -227,7 +234,7 @@ User information: uid=0 euid=0 gid=0 egid=0
 
 
 
-### 模块化的应用
+
 
 
 
