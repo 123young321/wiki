@@ -11,6 +11,7 @@
         * [安装](doc/python/celery/install.md)
         * [调用任务](doc/python/celery/tasks.md)
         * [任务日志](doc/python/celery/log.md)
+        * [周期任务](doc/python/celery/periodic_tasks.md)
     * [Django](doc/python/django/README.md)
         * [安装](doc/python/django/install.md)
 ---
