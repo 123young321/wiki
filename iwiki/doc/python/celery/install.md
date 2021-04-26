@@ -25,7 +25,7 @@ python3 -m venv py368
 pip install -U Celery
 ```
 
-## 选择 Broker
+## Broker
 
 ### Redis作为Broker
 
@@ -34,7 +34,7 @@ pip install -U Celery
 ```
 pip install -U "celery[redis]"
 ```
-#### Redis作为Broker的基本配置
+#### 配置
 
 Broker基本的格式
 ```python
@@ -59,10 +59,13 @@ app = Celery('tasks', broker='redis://localhost:6379/0')
 def add(x, y):
     return x + y
 ```
-### 运行celery worker服务器
+#### 运行 Worker 服务器
 ```
 celery -A tasks worker --loglevel=INFO
 
+```
+---
+```
 celery -A tasks worker --loglevel=INFO
 /root/py368/lib64/python3.6/site-packages/celery/platforms.py:797: RuntimeWarning: You're running the worker with superuser privileges: this is
 absolutely not recommended!
@@ -92,6 +95,15 @@ User information: uid=0 euid=0 gid=0 egid=0
   . tasks.add
 
 ```
+#### 调用任务
+
+```python
+
+
+```
+
+
+
 
 ### 模块化的应用
 

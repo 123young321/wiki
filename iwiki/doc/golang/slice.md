@@ -1,6 +1,5 @@
 # 切片
 
-
 切片就是动态数组
 
 切片是Go中重要的数据类型，每个切片对象内部都维护着：数组指针，切片长度，切片容量三个数据
@@ -105,6 +104,32 @@ roles2 --------
 ```
 示例：扩容后的内存地址会和之前指向同一个内存地址,修改源切片此时扩容后的切片也会变化
 ```go
-
+var roles = make([]int, 1, 3)
+fmt.Printf("切片的内部结构roles：%v,切片的长度：%d,切片的容量：%d\n", roles, len(roles), cap(roles))
+// 通过append的方式添加新的切片
+fmt.Println("切片的扩容 roles2 := append(roles, 8)")
+roles2 := append(roles, 8)
+fmt.Printf("切片的内部结构roles2：%v,切片的长度：%d,切片的容量：%d\n", roles2, len(roles2), cap(roles2))
+fmt.Println("roles 和 roles2 指向同一个地址 修改了 roles 此时 roles2 也发生了变化")
+roles[0] = 9
+fmt.Println(roles,roles2)
+>>> 
+切片的内部结构roles：[0],切片的长度：1,切片的容量：3
+切片的扩容 roles2 := append(roles, 8)
+切片的内部结构roles2：[0 8],切片的长度：2,切片的容量：3
+roles 和 roles2 指向同一个地址 修改了 roles 此时 roles2 也发生了变化
+[9] [9 8]
 
 ```
+## 切片的常见操作
+https://www.bilibili.com/video/BV1Mi4y1x7xF?p=66
+
+### 长度容量
+```go
+
+```
+### 索引
+```go
+
+```
+

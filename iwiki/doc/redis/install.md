@@ -76,9 +76,10 @@ dir /data/redis_cluster/redis_6379
 ```
 > [!TIP|style:flat|label:注意|iconVisibility:visible] 
 > Redis默认提供了安装脚本可以在此基础进行更改
+> 
 > vim /opt/redis_cluster/redis-3.2.9/utils/install_server.sh 
 
-## 启动Redis
+## 启动服务
 ```
 redis-server /opt/redis_cluster/redis_6379/conf/redis_6379.conf
 ```
@@ -90,7 +91,7 @@ root        657      1  0 12:34 ?        00:00:04 /usr/local/bin/redis-server 12
 root       4451      1  0 13:32 ?        00:00:00 redis-server 192.168.120.110:6379
 root       4743   1139  0 13:33 pts/0    00:00:00 grep --color=auto redis
 ```
-### 启动redis客户端
+### 启动客户端
 ```
 redis-cli -h 192.168.120.110
 ```
