@@ -4,7 +4,7 @@
 
 在开始学习或者使用celery的过程中你需要做到以下几点
 
-1. 选择 Broker Celery中支持三种方式分别为
+1. Broker Celery中支持三种方式分别为
 2. 安装 Celery
 
 ## 安装 
@@ -32,7 +32,7 @@ pip install -U Celery
 
 ### Redis作为Broker
 
-#### 安装celery[redis]依赖
+#### 安装 celery[redis] 依赖
 该位置推荐捆绑安装，如果直接运行 `pip install redis` 则安装的最新版本，可能会有版本兼容问题，所以推荐使用捆绑安装会自动解决版本之间的兼容问题
 ```
 pip install -U "celery[redis]"
@@ -52,7 +52,7 @@ Celery的应用具体分为两种
 ### 实例应用
 
 实例应用就是初始化Celery获取一个实例化对象，该实例对象会有两个参数分别为 `name` 和 `broker`
-```py
+```python
 # 创建一个文件 touch tasks.py
 from celery import Celery
 app = Celery('tasks', broker='redis://localhost:6379/0')
@@ -61,7 +61,7 @@ def add(x, y):
     return x + y
 ```
 
-### 模块化的应用
+### 模块化应用
 
 
 
@@ -128,7 +128,7 @@ def add(x, y):
 
 示例：启动实例应用
 
-```
+```python
 celery -A tasks_config worker --loglevel=INFO
 ```
 注意：这里的启动文件要和 文件名称 相同
@@ -165,7 +165,7 @@ User information: uid=0 euid=0 gid=0 egid=0
 
 
 ## 运行 Worker
-```
+```python
 celery -A tasks worker --loglevel=INFO
 
 ```
