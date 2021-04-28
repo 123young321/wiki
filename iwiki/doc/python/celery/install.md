@@ -218,18 +218,52 @@ User information: uid=0 euid=0 gid=0 egid=0
 
 
 
-结果存储的Celery支持的方式很多
-
-
-
-
-
-
+## 配置结果存储后端
+Celery支持的结果存储后端有很多方式，例如MySQL,MongoDB,Redis等，在接下来的案例中使用Redis作为结果后端
 
 ```python
+from celery import Celery
 
+app = Celery('tasks', broker='redis://172.17.150.44:6379/0',backend='redis://172.17.150.44:6379/1')
+
+@app.task
+def add(x, y):
+    return x + y
 
 ```
+
+![配置结果后端](http://39.105.100.168:8888/images/celery_config_backend.png)
+
+
+示例：
+```
+In [1]: from tasks import add
+
+In [2]: r = add.delay(1,2)
+
+In [3]: r.get()
+Out[3]: 3
+
+In [4]: r.status
+Out[4]: 'SUCCESS'
+
+```
+
+## 总结
+
+在初学Celery中需要注意的是
+
+1. 个人学习搭建的环境是实例应用还是模块化应用
+2. 配置过程中一定不能缺少相应的组件分别为 `broker`, `backend`, `任务名称` 是有默认值的可以不配置
+3. 学习过程中查询资料的时候一定注意版本 Celery 在 `4.x` 版本和之前的版本在配置项方面有较大的差异
+
+
+
+
+
+
+
+
 
 
 
