@@ -73,6 +73,8 @@ databases 16
 dbfilename redis_6379.rdb
 ### 本地数据库目录
 dir /data/redis_cluster/redis_6379
+### 配置密码
+requirepass celery
 ```
 > [!TIP|style:flat|label:注意|iconVisibility:visible] 
 > Redis默认提供了安装脚本可以在此基础进行更改
@@ -93,7 +95,10 @@ root       4743   1139  0 13:33 pts/0    00:00:00 grep --color=auto redis
 ```
 ### 启动客户端
 ```
-redis-cli -h 192.168.120.110
+redis-cli -h 0.0.0.0
 ```
-
+如果设置了密码
+```
+alias redis-start='redis-cli -h 172.17.150.44 -p 6379 -a celery'
+```
 
