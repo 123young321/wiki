@@ -9,9 +9,11 @@
         * [Python操作MySQL](doc/python/db/mysql.md)
     * [Celery](doc/python/celery/README.md)
         * [安装](doc/python/celery/install.md)
-        * [调用任务](doc/python/celery/tasks.md)
-        * [任务日志](doc/python/celery/log.md)
+        * [任务](doc/python/celery/tasks.md)
+        * [模块化应用](doc/python/celery/application.md)
         * [周期任务](doc/python/celery/periodic_tasks.md)
+        * [守护进程](doc/python/celery/daemonizing.md)
+
     * [Django](doc/python/django/README.md)
         * [安装](doc/python/django/install.md)
 ---
@@ -25,6 +27,8 @@
     * [指针](doc/golang/pointer.md)
     * [循环](doc/golang/loop.md)
     * [切片](doc/golang/slice.md)
+    * [Map](doc/golang/map.md)
+
 ---
 
 * [JavaScript](doc/javascript/README.md)
