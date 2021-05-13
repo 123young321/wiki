@@ -19,7 +19,7 @@ systemd 219
 ```
 systemctl {start|stop|restart|status} celery.service
 ```
-##### 配置文件 celery.service
+##### 服务文件 celery.service
 配置文件路径：`/etc/systemd/system/celery.service:`
 
 示例配置文件：
@@ -51,9 +51,10 @@ WantedBy=multi-user.target
 
 ```
 
-##### Python项目文件
+##### 应用配置文件
 
-配置路径：`/etc/conf.d/celery`
+配置路径：`/etc/conf.d/celery` 该路径必须和服务文件中的 `EnvironmentFile` 保持一致
+
 ```python
 # Name of nodes to start
 # here we have a single node
@@ -62,8 +63,8 @@ CELERYD_NODES="w1"
 #CELERYD_NODES="w1 w2 w3"
 
 # Absolute or relative path to the 'celery' command:
-CELERY_BIN="/usr/local/bin/celery"
-#CELERY_BIN="/virtualenvs/def/bin/celery"
+# CELERY_BIN="/usr/local/bin/celery" # py368 为虚拟环境的路径
+CELERY_BIN="/root/py368/bin/celery"
 
 # App instance to use
 # comment out this line if you don't use an app
@@ -100,8 +101,8 @@ After=network.target
 
 [Service]
 Type=simple
-User=celery
-Group=celery
+User=root
+Group=root
 EnvironmentFile=/etc/conf.d/celery
 WorkingDirectory=/opt/celery
 ExecStart=/bin/sh -c '${CELERY_BIN} -A ${CELERY_APP} beat  \
@@ -128,8 +129,8 @@ https://blog.csdn.net/weixin_43790276/article/details/89076494
 
 
 
+https://stackoverflow.com/questions/57266711/daemonization-celery-in-production
 
 
-
-
+http://www.10qianwan.com/articledetail/627516.html
 

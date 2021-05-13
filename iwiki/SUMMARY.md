@@ -28,6 +28,7 @@
     * [循环](doc/golang/loop.md)
     * [切片](doc/golang/slice.md)
     * [Map](doc/golang/map.md)
+    * [结构体](doc/golang/struct.md)
 
 ---
 
