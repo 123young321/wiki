@@ -32,6 +32,12 @@
 
 ---
 
+
+* [Beego](doc/beego/README.md)
+  * [环境搭建](doc/beego/install.md)
+
+
+
 * [JavaScript](doc/javascript/README.md)
     * [1.1 对象](doc/javascript/object.md)
     * [1.2 条件判断](doc/javascript/condition.md)
@@ -49,8 +55,7 @@
 * [小程序](doc/wx/README.md)
     * [1.1 环境搭建](doc/wx/install.md)
 
---- 
+---
 
 * [Redis](doc/redis/REMADME.md)
     * [安装](doc/redis/install.md)
-    
