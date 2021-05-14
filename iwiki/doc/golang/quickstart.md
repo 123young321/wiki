@@ -59,7 +59,7 @@
 注意：上述的方法为临时修改环境变量，如果想要永久修改环境变量，可以把环境变量添加到 `.bash_profile` 如若没有可以自行创建
 
    ```shell
-   cd 
+   cd
    vim .bash_profile
    ```
 
@@ -93,7 +93,7 @@
 
 #### 运行的三种方式
 
-go运行的三种方式分别为  `go run` `go build` `go install` 
+go运行的三种方式分别为  `go run` `go build` `go install`
 
 ##### go run
 
@@ -106,20 +106,20 @@ lipanpan@lipanpandeMacBook-Pro grammer % go run quick_start.go
 
 ##### go build
 
-go build 有多种编译方法，无参数编译，文件列表编译，指定包编译等 
+go build 有多种编译方法，无参数编译，文件列表编译，指定包编译等
 
 ```go
-lipanpan@lipanpandeMacBook-Pro grammer % go build quick_start.go 
+lipanpan@lipanpandeMacBook-Pro grammer % go build quick_start.go
 lipanpan@lipanpandeMacBook-Pro grammer % ll
 -rwxr-xr-x  1 lipanpan  staff   1.9M  4 14 23:34 quick_start
 -rw-r--r--  1 lipanpan  staff    85B  4 14 23:22 quick_start.go
-lipanpan@lipanpandeMacBook-Pro grammer % ./quick_start 
+lipanpan@lipanpandeMacBook-Pro grammer % ./quick_start
 人生苦短，Let us go
 ```
 
 常用的参数：
 
- 
+
 
 参考地址 ：go build 的详细使用方式方法请参考该地址 ：http://c.biancheng.net/view/120.html
 
@@ -131,21 +131,53 @@ lipanpan@lipanpandeMacBook-Pro grammer % ./quick_start
 
 
 
+### Linux安装Golang
 
 
+#### 下载编译器
+
+官网地址：https://golang.google.cn/dl/
+
+```golang
+wget https://golang.google.cn/dl/go1.16.4.linux-amd64.tar.gz
+```
+
+### 安装
+安装目录 `/opt/go`
+```golang
+tar xf go1.16.4.linux-amd64.tar.gz -C /opt/
+```
+配置环境变量PATH
+```
+export PATH=/opt/go/bin:$PATH
+```
 
 
+### 配置
 
+安装Golang的过程中除了配置PATH需要配置三个环境变量分别为:
+GOROOT：Golang的安装目录，本文档中为`/opt/go/`
+GOPATH：项目的代码目录，本文档中为`/opt/Golangprojects`
+GOBIN：项目中的bin目录，本文档中为`/opt/Golangprojects/bin`
 
+#### 创建项目目录
+```
+tree -L 2 /opt/Golangprojects/
+/opt/Golangprojects/
+├── bin
+├── pkg
+└── src
+```
 
+#### 配置环境变量
 
+```
+# vim .bash_profile
 
+export PATH=/opt/go/bin:$PATH
+export GOROOT=/opt/go
+export GOPATH=/opt/Golangprojects/
+export GOBIN=/opt/Golangprojects/bin
 
-
-
-
-
-
-
-
-
+source .bash_profile
+```
