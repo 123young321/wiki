@@ -131,10 +131,10 @@ lipanpan@lipanpandeMacBook-Pro grammer % ./quick_start
 
 
 
-### Linux安装Golang
+## Linux安装Golang
 
 
-#### 下载编译器
+### 下载编译器
 
 官网地址：https://golang.google.cn/dl/
 
