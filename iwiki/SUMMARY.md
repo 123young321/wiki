@@ -62,5 +62,5 @@
 
 ---
 
-* [TIDB](doc/tidb/REMADME.md)
+* [TIDB](doc/tidb/README.md)
     * [安装](doc/tidb/install.md)
