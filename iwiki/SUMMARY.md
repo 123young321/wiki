@@ -59,3 +59,8 @@
 
 * [Redis](doc/redis/REMADME.md)
     * [安装](doc/redis/install.md)
+
+---
+
+* [TIDB](doc/tidb/REMADME.md)
+    * [安装](doc/tidb/install.md)
