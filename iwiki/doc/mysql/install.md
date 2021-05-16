@@ -11,11 +11,11 @@ mkdir /data/soft -p
 ```
 数据目录
 ```
-mkdir /data/mysql
+mkdir /data/mysql_cluster -p
 ```
 安装目录
 ```
-mkdir /opt/mysql/
+mkdir /opt/mysql_cluster -p
 ```
 
 ## 卸载Mariadb
@@ -27,19 +27,19 @@ yum remove mariadb*
 
 
 ## 下载与安装
-官网地址：
+官网地址：https://downloads.mysql.com/archives/community/
 
 ### 下载
 
 ```python
-wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.26-linux-glibc2.12-x86_64.tar
+wget -O /data/soft/mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
 ```
 
 ### 解压
 
 ```python
 tar xf mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
-mv mysql-5.7.26-linux-glibc2.12-x86_64  /application/mysql
+mv mysql-5.7.26-linux-glibc2.12-x86_64  /opt/mysql
 
 ```
 

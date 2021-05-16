@@ -76,10 +76,10 @@ dir /data/redis_cluster/redis_6379
 ### 配置密码
 requirepass celery
 ```
-> [!TIP|style:flat|label:注意|iconVisibility:visible] 
+> [!TIP|style:flat|label:注意|iconVisibility:visible]
 > Redis默认提供了安装脚本可以在此基础进行更改
-> 
-> vim /opt/redis_cluster/redis-3.2.9/utils/install_server.sh 
+>
+> vim /opt/redis_cluster/redis-3.2.9/utils/install_server.sh
 
 ## 启动服务
 ```
@@ -101,4 +101,3 @@ redis-cli -h 0.0.0.0
 ```
 alias redis-start='redis-cli -h 172.17.150.44 -p 6379 -a celery'
 ```
-
