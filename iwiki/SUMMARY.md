@@ -37,7 +37,7 @@
   * [环境搭建](doc/beego/install.md)
 
 
-
+---
 * [JavaScript](doc/javascript/README.md)
     * [1.1 对象](doc/javascript/object.md)
     * [1.2 条件判断](doc/javascript/condition.md)
@@ -62,5 +62,5 @@
 
 ---
 
-* [TIDB](doc/tidb/README.md)
-    * [安装](doc/tidb/install.md)
+* [TIDB](doc/tidb/REMADME.md)
+    * [安装](doc/install.md)

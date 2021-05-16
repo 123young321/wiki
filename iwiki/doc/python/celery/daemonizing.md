@@ -133,4 +133,3 @@ https://stackoverflow.com/questions/57266711/daemonization-celery-in-production
 
 
 http://www.10qianwan.com/articledetail/627516.html
-
