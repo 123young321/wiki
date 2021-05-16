@@ -54,7 +54,10 @@
     * [1.1 环境搭建](doc/wx/install.md)
 
 ---
+* [MySQL](doc/mysql/REMADME.md)
+    * [安装](doc/redis/install.md)
 
+---
 * [Redis](doc/redis/REMADME.md)
     * [安装](doc/redis/install.md)
 

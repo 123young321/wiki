@@ -85,13 +85,7 @@ celery multi stopwait w1 -A proj -l INFO
 防止Celery被重复启动可以创建 `pid` 和 `log`日志文件
 
 ```python
-mkdir -p /var/run/celery # 
-mkdir -p /var/log/celery # 
+mkdir -p /var/run/celery #
+mkdir -p /var/log/celery #
 celery multi start w1 -A proj -l INFO --pidfile=/var/run/celery/%n.pid --logfile=/var/log/celery/%n%I.log
 ```
-
-
-
-
-
-

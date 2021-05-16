@@ -7,7 +7,7 @@
 1. Broker Celery中支持三种方式分别为
 2. 安装 Celery
 
-## 安装 
+## 安装
 
 官网安装提供了几种的安装方式
 
@@ -108,7 +108,7 @@ accept_content = ['json']
 timezone = 'Asia/Shanghai'
 enable_utc = True
 
-# 校验语法是否正确 
+# 校验语法是否正确
 # python -m celeryconfig
 ```
 示例：如何使用配置文件
@@ -255,7 +255,7 @@ Out[4]: 'SUCCESS'
 
 1. 个人学习搭建的环境是实例应用还是模块化应用
 2. 配置过程中一定不能缺少相应的组件分别为 `broker`, `backend`, `任务名称` 是有默认值的可以不配置
-3. 学习过程中查询资料注意版本 Celery 在 `4.x` 版本和之前的版本在配置项有较大的差异， `6.x` 以后配置项都会小写 
+3. 学习过程中查询资料注意版本 Celery 在 `4.x` 版本和之前的版本在配置项有较大的差异， `6.x` 以后配置项都会小写
 4. 启动 `Celery Worker` 的时候一定要注意路径
 5. 一定深入的了解 `AsyncResult` 对象
 
@@ -289,9 +289,3 @@ Celery Worker : 执行任务的消费者, 通常会在多台服务器运行多�
 Broker : 消息代理, 队列本身. 也称为消息中间件. 接受任务生产者发送过来的任务消息, 存进队列再按序分发给任务消费方(通常是消息队列或者数据库),可以是 RabbitMQ 、 Redis, 官方推荐 RabbitMQ.
 Producer : 任务生产者. 调用 Celery API , 函数, 而产生任务并交给任务队列处理的都是任务生产者.
 Result Backend : 任务处理完成之后保存状态信息和结果, 以供查询, 可以是AMQP, Redis, memcached, MongoDB, SQLAlchemy. Django ORM, Apache Cassandra等.
-
-
-
-
-
-

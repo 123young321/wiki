@@ -68,9 +68,10 @@ CELERY_BIN="/root/py368/bin/celery"
 
 # App instance to use
 # comment out this line if you don't use an app
-CELERY_APP="proj"
+# CELERY_APP="tasks"
 # or fully qualified:
-#CELERY_APP="proj.tasks:app"
+#CELERY_APP="proj.tasks:study_celery"
+CELERY_APP="tasks"
 
 # How to call manage.py
 CELERYD_MULTI="multi"
@@ -104,7 +105,7 @@ Type=simple
 User=root
 Group=root
 EnvironmentFile=/etc/conf.d/celery
-WorkingDirectory=/opt/celery
+WorkingDirectory=/root/celery-code/next-step/proj
 ExecStart=/bin/sh -c '${CELERY_BIN} -A ${CELERY_APP} beat  \
     --pidfile=${CELERYBEAT_PID_FILE} \
     --logfile=${CELERYBEAT_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL}'
@@ -112,6 +113,7 @@ Restart=always
 
 [Install]
 WantedBy=multi-user.target
+~                           
 
 ```
 
