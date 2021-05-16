@@ -55,7 +55,7 @@
 
 ---
 * [MySQL](doc/mysql/REMADME.md)
-    * [安装](doc/redis/install.md)
+    * [安装](doc/mysql/install.md)
 
 ---
 * [Redis](doc/redis/REMADME.md)
