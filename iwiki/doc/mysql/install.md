@@ -1,31 +1,56 @@
 
-[toc]
+
 # Linux安装MySQL
 
-## 1 下载与安装
-官网地址：
 
-1. 下载软件包
+## 目录规划
 
-```python
-mkdir pkg
-wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.26-linux-glibc2.12-x86_64.tar
+下载目录
 ```
-2. 解压
-```python
-tar xf mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
-mkdir /application
-mv mysql-5.7.26-linux-glibc2.12-x86_64  /application/mysql
+mkdir /data/soft -p
+```
+数据目录
+```
+mkdir /data/mysql
+```
+安装目录
+```
+mkdir /opt/mysql/
+```
 
-# 卸载 mariadb
+## 卸载Mariadb
+
+```python
 rpm -qa | grep mariadb*
 yum remove mariadb*
 ```
-3. 创建用户
+
+
+## 下载与安装
+官网地址：
+
+### 下载
+
+```python
+wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.26-linux-glibc2.12-x86_64.tar
+```
+
+### 解压
+
+```python
+tar xf mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
+mv mysql-5.7.26-linux-glibc2.12-x86_64  /application/mysql
+
+```
+
+### 创建用户
+
 ```python
 useradd -s /sbin/nologin mysql
 ```
-4. 设置环境变量
+
+### 设置环境变量
+
 ```python
 vim /etc/profile
 export PATH=/application/mysql/bin:$PATH
@@ -33,11 +58,15 @@ source /etc/profile
 mysql -V
 mysql  Ver 14.14 Distrib 5.7.26, for linux-glibc2.12 (x86_64) using  EditLine wrapper
 ```
-5. 创建数据目录
+
+### 创建数据目录
+
 ```python
 mkdir /data
 ```
-6. 挂载磁盘
+
+#### 挂载磁盘
+
 ```python
 fdisk -l
 mkfs.xfs /dev/sdb # 格式化磁盘
@@ -48,12 +77,17 @@ UUID="6e180e7c-e491-48f5-88b0-30706707bb10" /data   xfs  defaults 0 0
 mount -a
 df -h
 ```
-7. 授权
+
+#### 授权
+
 ```python
  chown -R mysql.mysql /application/*
  chown -R mysql.mysql /data
 ```
-8. 初始化数据(创建系统数据)
+
+#### 初始化数据
+
+创建系统数据
 ```python
 mkdir /data/mysql/data -p
 chown -R mysql.mysql /data
@@ -69,7 +103,9 @@ mysqld --initialize-insecure --user=mysql --basedir=/application/mysql --datadir
 2020-10-27T14:53:42.903173Z 1 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
 
 ```
-9. 编写配置文件
+
+## 编写配置文件
+
 ```python
 cat >/etc/my.cnf <<EOF
 [mysqld]
@@ -83,7 +119,8 @@ port=3306
 socket=/tmp/mysql.sock
 EOF
 ```
-10. 启动数据库
+
+## 启动数据库
 > sys-v 启动方式
 
 ```python

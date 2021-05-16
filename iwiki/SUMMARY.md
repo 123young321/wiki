@@ -41,10 +41,7 @@
     * [1.2 条件判断](doc/javascript/condition.md)
 
 ---
-* [Jenkins](doc/jenkins/README.md)
-    * [1.1 安装](doc/jenkins/install.md)
-    * [1.2 Jenkins集成GitHub](doc/jenkins/integrategithub.md)
----
+
 * [Linux](doc/linux/README.md)
     * [1.1 环境变量](doc/linux/install.md)
     * [1.2 用户管理](doc/linux/user.md)
@@ -70,3 +67,10 @@
 
 * [Docker](doc/docker/README.md)
   * [安装](doc/docker/install.md)
+
+---
+
+* [Jenkins](doc/jenkins/README.md)
+    * [1.1 安装](doc/jenkins/install.md)
+    * [1.2 Jenkins集成GitHub](doc/jenkins/integrategithub.md)
+---
