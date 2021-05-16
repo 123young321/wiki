@@ -2,9 +2,6 @@
 
 ## 目录结构规划
 
-+ 下载目录
-+ 数据目录
-+ 安装目录
 
 ### 下载目录
 ```
@@ -59,7 +56,7 @@ make && make install
 vim /opt/redis_cluster/redis_6379/conf/redis_6379.conf
 ### 以守护进行模式启动
 daemonize yes
-### 绑定主机ip地址
+### 绑定主机ip地址 Your IP
 bind 192.168.120.110
 ### 监听端口
 port 6379
@@ -95,7 +92,7 @@ root       4743   1139  0 13:33 pts/0    00:00:00 grep --color=auto redis
 ```
 ### 启动客户端
 ```
-redis-cli -h 0.0.0.0
+redis-cli -h 0.0.0.0 -p 6379
 ```
 如果设置了密码
 ```

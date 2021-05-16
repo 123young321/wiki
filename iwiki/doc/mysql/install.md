@@ -5,15 +5,15 @@
 
 ## 目录规划
 
-下载目录
+### 下载目录
 ```
 mkdir /data/soft -p
 ```
-数据目录
+### 数据目录
 ```
 mkdir /data/mysql_cluster -p
 ```
-安装目录
+### 安装目录
 ```
 mkdir /opt/mysql_cluster -p
 ```
@@ -27,6 +27,7 @@ yum remove mariadb*
 
 
 ## 下载与安装
+
 官网地址：https://downloads.mysql.com/archives/community/
 
 ### 下载
