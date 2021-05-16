@@ -32,10 +32,8 @@
 
 ---
 
-
 * [Beego](doc/beego/README.md)
   * [环境搭建](doc/beego/install.md)
-
 
 ---
 * [JavaScript](doc/javascript/README.md)
@@ -62,5 +60,5 @@
 
 ---
 
-* [TIDB](doc/tidb/REMADME.md)
+* [TIDB](doc/tidb/README.md)
     * [安装](doc/install.md)
