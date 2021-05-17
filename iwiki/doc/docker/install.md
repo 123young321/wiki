@@ -3,33 +3,59 @@
 
 官方文档：https://docs.docker.com/engine/install/centos/#prerequisites
 
-> 1 下载Docker依赖环境
+## 下载Docker依赖环境
 
 ```
 yum -y install yum-utils device-mapper-persistent-data lvm2
 ```
 
-> 2 指定Docker镜像源
+## 指定Docker镜像源
+
 ```
 yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 ```
-> 3 安装Docker
+
+### 安装Docker
 ```
 yum makecache fast
 yum -y install docker-ce
 ```
-> 4 启动Docker并测试
+### 启动Docker
+
 ```
 #启动docker服务
 systemctl start docker
 #设置开机自动启动
 systemctl enable docker
-#测试
+```
+
+### 查看Docker版本
+
+```
 docker --help
 docker --version
 ```
 
-### Docker的中央仓库
+## 设置ustc的镜像
+
+ustc是老牌的Linux镜像服务提供者，使用ustc的docker加速器速度很快。ustc docker mirrors的优势是不需要注册
+https://www.bilibili.com/video/BV1qJ411j718?p=6&spm_id_from=pageDriver
+
+
+```
+cat /etc/docker/daemon.json
+
+
+```
+重启服务
+```
+systemctl daemon-reload
+systemctl restart docker
+```
+
+
+
+## Docker的中央仓库
 
 1. Docker官方的中央仓库(https://hub.docker.com/)
 2. 国内的镜像网站:

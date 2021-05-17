@@ -39,9 +39,14 @@ wget -O /data/soft/mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz https://downloads.
 ### 解压
 
 ```python
-tar xf mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
-mv mysql-5.7.26-linux-glibc2.12-x86_64  /opt/mysql
+tar zxvf /data/soft/mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz -C /opt/mysql_cluster
 
+```
+
+### 创建软连接
+
+```
+ln -s /opt/mysql_cluster/mysql-5.7.26-linux-glibc2.12-x86_64/ /opt/mysql_cluster/mysql
 ```
 
 ### 创建用户
@@ -54,8 +59,13 @@ useradd -s /sbin/nologin mysql
 
 ```python
 vim /etc/profile
-export PATH=/application/mysql/bin:$PATH
+export PATH=/opt/mysql_cluster/mysql/bin:$PATH
 source /etc/profile
+```
+
+### 查看版本号
+
+```python
 mysql -V
 mysql  Ver 14.14 Distrib 5.7.26, for linux-glibc2.12 (x86_64) using  EditLine wrapper
 ```
@@ -63,7 +73,7 @@ mysql  Ver 14.14 Distrib 5.7.26, for linux-glibc2.12 (x86_64) using  EditLine wr
 ### 创建数据目录
 
 ```python
-mkdir /data
+mkdir /data/mysql_cluster/mysql_3306 -p
 ```
 
 #### 挂载磁盘
@@ -82,26 +92,36 @@ df -h
 #### 授权
 
 ```python
- chown -R mysql.mysql /application/*
- chown -R mysql.mysql /data
+ chown -R mysql.mysql /opt/mysql_cluster/*
+ chown -R mysql.mysql /data/mysql_cluster/
 ```
 
 #### 初始化数据
 
 创建系统数据
 ```python
-mkdir /data/mysql/data -p
-chown -R mysql.mysql /data
-yum install -y libaio-devel
-mysqld --initialize-insecure --user=mysql --basedir=/application/mysql --datadir=/data/mysql/data
+mkdir /data/mysql_cluster/mysql_3306/ -p
+chown -R mysql.mysql /data/mysql_cluster/*
 
-[root@db-201 ~]# mysqld --initialize-insecure --user=mysql --basedir=/application/mysql --datadir=/data/mysql/data
+yum install -y libaio-devel
+mysqld --initialize-insecure --user=mysql --basedir=/opt/mysql_cluster/mysql --datadir=/data/mysql_cluster/mysql_3306
+
+mysqld --initialize-insecure --user=mysql --basedir=/opt/mysql_cluster/mysql --datadir=/data/mysql_cluster/mysql_3306
+>>> 输出以下表示失败 需要安装插件
 2020-10-27T14:53:41.012246Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
 2020-10-27T14:53:42.470450Z 0 [Warning] InnoDB: New log files created, LSN=45790
 2020-10-27T14:53:42.788504Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.
 2020-10-27T14:53:42.894731Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 34f124d6-1864-11eb-8b6c-000c29d8b98e.
 2020-10-27T14:53:42.895969Z 0 [Warning] Gtid table is not ready to be used. Table 'mysql.gtid_executed' cannot be opened.
 2020-10-27T14:53:42.903173Z 1 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+# 安装插件重新执行
+yum install -y libaio-devel
+mysqld --initialize-insecure --user=mysql --basedir=/opt/mysql_cluster/mysql --datadir=/data/mysql_cluster/mysql_3306
+
+2021-05-17T05:50:07.840104Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2021-05-17T05:50:07.843312Z 0 [ERROR] --initialize specified but the data directory has files in it. Aborting.
+2021-05-17T05:50:07.843374Z 0 [ERROR] Aborting
+
 
 ```
 
@@ -111,8 +131,8 @@ mysqld --initialize-insecure --user=mysql --basedir=/application/mysql --datadir
 cat >/etc/my.cnf <<EOF
 [mysqld]
 user=mysql
-basedir=/application/mysql
-datadir=/data/mysql/data
+basedir=/opt/mysql_cluster/mysql
+datadir=/data/mysql_cluster/mysql_3306
 socket=/tmp/mysql.sock
 server_id=6
 port=3306
@@ -122,15 +142,24 @@ EOF
 ```
 
 ## 启动数据库
-> sys-v 启动方式
+
+### init.d 启动
+
+将文件mysql启动文件脚本复制到 `/etc/init.d/mysqld`
 
 ```python
-1. 将文件复制到/etc/init.d/mysqld
-cp /application/mysql/support-files/mysql.server  /etc/init.d/mysqld
+cp /opt/mysql_cluster/mysql/support-files/mysql.server  /etc/init.d/mysqld
+```
+
+启动 mysql
+
+```
 service mysqld restart
 /etc/init.d/mysqld restart
 ```
-> systemctl 启动方式
+
+### systemd 启动
+
 
 ```python
 cat >/etc/systemd/system/mysqld.service <<EOF
@@ -149,11 +178,19 @@ ExecStart=/application/mysql/bin/mysqld --defaults-file=/etc/my.cnf
 LimitNOFILE = 5000
 EOF
 ```
-11. 设置管理员密码
+## 登录
+
+```
+
+```
+
+### 设置管理员密码
+
 ```python
 mysqladmin -uroot -p password 123456
 ```
-### 1.1 重置管理员密码
+
+### 重置管理员密码
 
 
 ### 1.2 用户权限管理
