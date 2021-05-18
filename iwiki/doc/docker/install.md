@@ -4,14 +4,16 @@
 官方文档：https://docs.docker.com/engine/install/centos/#prerequisites
 
 
-## 下载Docker依赖环境
+## 下载安装
 
 ### 更新yum源
 ```
 yum update
 ```
 
-### 安装Docekr所需依赖，yum-utils提供yum-config-manager功能，另外两个是devicemapper驱动依赖
+### 安装依赖
+
+yum-utils提供yum-config-manager功能，另外两个是devicemapper驱动依赖
 
 ```
 yum -y install yum-utils device-mapper-persistent-data lvm2
@@ -23,19 +25,19 @@ yum -y install yum-utils device-mapper-persistent-data lvm2
 yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 ```
 
-### 安装Docker
+### 安装
 ```
 yum makecache fast
 yum -y install docker-ce
 ```
 
-### 启动Docker
+### 启动
 
 ```
 systemctl start docker
 ```
 
-### 查看Docker版本
+### 查看版本
 
 ```
 docker --help
@@ -59,7 +61,7 @@ vim /etc/docker/daemon.json
 
 ```
 
-重新启动Docker
+重新启动
 ```
 systemctl daemon-reload
 systemctl restart docker

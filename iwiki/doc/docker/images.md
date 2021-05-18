@@ -11,6 +11,12 @@ docker images
 ```
 #### 镜像的基本信息
 
+```
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+docker.io/redis     latest              bc8d70f9ef6c        4 days ago          105 MB
+```
+
 REPOSITORY：镜像名称
 TAG：镜像标签
 IMAGE ID：镜像ID
@@ -20,7 +26,7 @@ SIZE：镜像大小
 
 #### 常用参数
 ```
-docker images --help
+$ docker images --help
 
 Usage:  docker images [OPTIONS] [REPOSITORY[:TAG]]
 
@@ -68,7 +74,7 @@ docker pull 镜像名称
 示例：下载redis的镜像
 
 ```
-docker pull docker.io/redis
+$ docker pull docker.io/redis
 Using default tag: latest
 Trying to pull repository docker.io/library/redis ...
 latest: Pulling from docker.io/library/redis
@@ -83,10 +89,12 @@ Status: Downloaded newer image for docker.io/redis:latest
 ```
 
 ### 删除镜像
+
 基于镜像ID删除镜像
 ```python
 docker rmi 镜像ID
 ```
+
 删除所有镜像
 ```
 docker rmi `docker images -q`
