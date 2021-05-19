@@ -66,8 +66,10 @@
 ---
 
 * [Docker](doc/docker/README.md)
-  * [安装](doc/docker/install.md)
+  * [环境搭建](doc/docker/install.md)
   * [镜像](doc/docker/images.md)
+  * [容器](doc/docker/container.md)
+
 ---
 
 * [Jenkins](doc/jenkins/README.md)
