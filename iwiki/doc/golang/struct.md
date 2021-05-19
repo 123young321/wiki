@@ -97,5 +97,3 @@ fmt.Printf("GoBook  subject : %s\n", GoBook.subject)
 fmt.Printf("GoBook   id : %d\n", GoBook.id)
 
 ```
-
-
