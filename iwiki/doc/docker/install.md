@@ -8,7 +8,7 @@
 
 ### 卸载旧版本
 ```
-um remove docker \
+yum remove docker \
            docker-client \
            docker-client-latest \
            docker-common \
@@ -21,7 +21,7 @@ um remove docker \
 
 ### 更新yum源
 ```
-yum update
+yum update -y
 ```
 
 ### 安装依赖
@@ -40,8 +40,7 @@ yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/d
 
 ### 安装
 ```python
-yum makecache fast
-yum -y install docker-ce
+yum makecache fast && yum -y install docker-ce
 ```
 
 ### 启动
@@ -53,8 +52,7 @@ systemctl start docker
 ### 查看版本
 
 ```python
-docker --help
-docker --version
+docker --help && docker --version
 ```
 
 ### 设置ustc的镜像
@@ -78,7 +76,7 @@ vim /etc/docker/daemon.json
 重新启动
 
 ```
-systemctl daemon-reload $$ systemctl restart docker
+systemctl daemon-reload && systemctl restart docker
 ```
 
 
