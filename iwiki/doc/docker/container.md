@@ -113,6 +113,18 @@ CONTAINER ID   IMAGE           COMMAND       CREATED          STATUS            
 
 #### 守护式创建
 
+##### 守护式创建
+```
+$ docker run -di --name=centos_daemon centos:latest
+1f77cc22328f895954eed8aaf7de04c7bda856ad8a6de035c2b40f19411d3773
+```
+##### 登录守护式容器
+```
+$ docker exec -it centos_daemon /bin/bash
+[root@1f77cc22328f /]# ls
+bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+```
+
 ### 停止与启动容器
 
 #### 停止容器
