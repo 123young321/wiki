@@ -135,3 +135,104 @@ docker stop 容器名称(或者容器ID)
 ```python
 docker start 容器名称(或者容器ID)
 ```
+#### 删除容器
+```python
+docker rm 容器ID
+```
+注意：删除前必须停止容器
+
+#### 删除所有停止容器
+```python
+docker container prune
+```
+#### 容器重命名
+```python
+docker rename 原容器名  新容器名
+```
+
+### 容器指令批量操作
+
+#### 启动所有容器
+```python
+docker start $(docker ps -a | awk '{ print $1}' | tail -n +2)
+```
+#### 停止所有容器
+```python
+docker stop $(docker ps -a | awk '{ print $1}' | tail -n +2)
+```
+#### 关闭所有停止容器
+```python
+docker stop $(docker ps -a | awk '{ print $1}' | tail -n +2)
+```
+#### 删除所有停止容器
+```python
+docker rm $(docker ps -a | awk '{ print $1}' | tail -n +2)
+```
+#### 删除所有镜像
+```python
+docker rmi $(docker images | awk '{print $3}' |tail -n +2)
+```
+
+### 文件的拷贝
+
+指令：
+```
+docker cp 容器名称:拷贝的文件或者目录 容器名称:容器目录
+```
+
+示例：文件的拷贝 将宿主机文件拷贝到容器
+```
+$ docker cp anaconda-ks.cfg centos_daemon:/opt
+$ docker start centos_daemon
+centos_daemon
+$ docker exec -it centos_daemon /bin/bash
+[root@1f77cc22328f /]# cd /opt/
+[root@1f77cc22328f opt]# ls
+anaconda-ks.cfg
+[root@1f77cc22328f opt]#
+```
+
+示例：将容器中的文件拷贝到宿主机
+```
+docker cp centos_daemon:/root/test.py /opt/test
+```
+
+### 目录挂载
+
+目录挂载指的是当我们创建容器的时候，将宿主机的目录与容器内的目录进行映射，这样我们就可以通过修改宿主机某个目录的文件从而去影响容器
+
+示例：创建容器添加 `-v` 的参数 宿主机目录：容器目录
+```
+docker run -di -v /opt:/opt --name=c3 centos
+```
+
+注意：如果你共享的是多级的目录，可能会出现权限不足的提示，这是因为CentOS7中的安全模块selinux把权限禁掉了，我们需要添加参数 `--privileged=true` 来解决挂载的目录没有权限的问题
+
+
+### 查看IP地址
+
+我们可以通过以下命令查看容器运行的各种数据
+```
+docker inspect 容器名称(容器ID)
+
+"NetworkSettings": {
+    "Bridge": "",
+    "SandboxID": "90d058735f1492866641b80e4af1b623849d24c001a7a56c74912a70d5fec7a4",
+    "HairpinMode": false,
+    "LinkLocalIPv6Address": "",
+    "LinkLocalIPv6PrefixLen": 0,
+    "Ports": {},
+    "SandboxKey": "/var/run/docker/netns/90d058735f14",
+    "SecondaryIPAddresses": null,
+    "SecondaryIPv6Addresses": null,
+    "EndpointID": "2986c4927facf6a27309e43280e6e9936170e1d0415ef65c1fefd77816b63200",
+    "Gateway": "172.17.0.1",
+    "GlobalIPv6Address": "",
+    "GlobalIPv6PrefixLen": 0,
+    "IPAddress": "172.17.0.4",
+    .....
+```
+可以通过 format 的参数获取指定的 docker 信息
+```
+docker inspect --format='{{.NetworkSettings.IPAddress}}' c3
+```

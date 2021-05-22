@@ -69,6 +69,8 @@
   * [环境搭建](doc/docker/install.md)
   * [镜像](doc/docker/images.md)
   * [容器](doc/docker/container.md)
+  * [应用部署](doc/docker/deploy.md)
+  * [镜像制作](doc/docker/make_mirror_image.md)
 
 ---
 

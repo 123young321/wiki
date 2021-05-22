@@ -65,6 +65,7 @@ docker search 镜像名称
 + AUTOMATED：自动构建，表示该镜像由Docker Hub自动构建流程构建的
 
 ### 拉取镜像
+
 拉取镜像表示从中央仓库拉取镜像
 
 ```python
