@@ -97,3 +97,83 @@ fmt.Printf("GoBook  subject : %s\n", GoBook.subject)
 fmt.Printf("GoBook   id : %d\n", GoBook.id)
 
 ```
+
+## 结构体指针
+
+```golang
+// 创建结构体
+
+type Person struct {
+	name string
+	age  int
+}
+
+func main() {
+	//初始化结构体 创建一个结构体对象
+	p1 := Person{"Kevin", 18}
+	fmt.Println(p1.name, p1.age)
+	// 初始化结构体指针
+	// var p2 *Person = &Person{"Kevin2", 18}
+	p2 := &Person{"Kevin2", 18}
+	/**
+	此时p2存储的是p1的内存地址
+	 */
+	fmt.Println(p2.name, p2.age)
+	var p3 *Person = new(Person) // 此时返回的 nil 空指针
+
+	p3.name = "Kevin3"
+	p3.age = 20
+	fmt.Println(p3.name, p3.age)
+}
+
+```
+## 结构体赋值
+
+应用场景：实现实例的创建
+
+```
+type Person2 struct {
+	name string
+	age  int
+}
+
+// 结构体 赋值拷贝
+p1 := Person2{name: "Kevin", age: 19}
+p2 := p1
+
+fmt.Println(p1) // {Kevin 19}
+fmt.Println(p2) // {Kevin 19}
+
+// 修改 p1 的name
+p1.name = "Lisa"
+fmt.Println(p1) // {Lisa 19}
+fmt.Println(p2) // {Kevin 19}
+
+```
+
+## 结构体指针赋值
+
+应用场景：当修改某个结构体的时候，实现所有的数据进行同步
+
+```
+func main() {
+	// 结构体 指针 赋值
+	p3 := &Person2{name: "Kevin3", age: 18}
+	p4 := p3
+	fmt.Println(p3)
+	fmt.Println(p4)
+	// 修改结构体 P4 则对应的p3也发生了变化
+	p3.name = "Kevin4"
+	fmt.Println(p3)
+	fmt.Println(p4)
+}
+>>>
+&{Kevin3 18}  // 此时输出的是结构体指针对象
+&{Kevin3 18}
+&{Kevin4 18}
+&{Kevin4 18}
+```
+## 结构体的赋值拷贝
+
+
+在存在结构体嵌套时候，赋值会拷贝一份所有的数据

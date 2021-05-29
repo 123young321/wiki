@@ -184,7 +184,8 @@ tar zcvf book.tar.gz book
 ### 创建容器
 
 创建容器并登陆
-```
+
+```python
 $ docker run -id --name=cdb-doc 9f266d35e02c
 c356ac10cd34e6c21a47e3fa9065948fc0cd588688c1c9cafaf4466641c3274a
 
@@ -195,34 +196,88 @@ c356ac10cd34   9f266d35e02c   "/bin/bash"   4 seconds ago   Up 3 seconds        
 $ docker exec -it cdb-doc /bin/bash
 [root@c356ac10cd34 /]#
 ```
-将book.tar.gz拷贝到容器中
-```
+
+将 `book.tar.gz` 拷贝到容器中
+
+```python
 docker cp book.tar.gz cdb-doc:/root
 ```
+
 登录容器中并解压
-```
+
+```python
 tar xf book.tar.gz && cd book
 mv application /
 mv .npm $HOME
 mv .gitbook $HOME
 ```
+
 添加环境变量
-```
+
+```python
 export NODE_HOME=/application/node-v12.22.1-linux-x64/
 export PATH=$PATH:$NODE_HOME/bin
 export NODE_PATH=$NODE_HOME/lib/node_modules
 ```
+
 ### 制作镜像
 
+基本语法介绍
+```python
+
+docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+
+  -a :提交的镜像作者；
+  -c :使用Dockerfile指令来创建镜像；
+  -m :提交时的说明文字；
+  -p :在commit时，将容器暂停。
 ```
-docker commit -m "cdb-doc环境" -a "lipanpan" cdb-doc centos:7.4.1708
+
+
+```python
+& docker commit -m "cdb-doc环境" -a "lipanpan" cdb-doc centos:7.4.1708
 
 [root@localhost ~]# docker commit -m "cdb-doc环境" -a "lipanpan03" cdb-doc 9f266d35e02c
 sha256:8932ccd60ec010b384888aaea0f6784341dedf00764c0261b7b3dc616553a8f4
+```
 
+
+```python
+[root@docker-node1 ~]# docker commit -m "GitBook Deploy" -a "lipanpan<1299793997@qq.com>" ea5425258c62 9f266d35e02c
+sha256:edb59af03a4623401cb5b496942b596681b45dda07d10972bd6dc7856b16c0bb
 
 ```
+
+
+### 打包镜像
+
+将镜像打Tag的基本指令：
+
+```python
+docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+```
+
+```python
+& docker tag 9f266d35e02c lipanpan58/centos7.4.1708:v1
+```
+
+注意事项：名称前加上自己的 `docker hub` 的 `Docker ID` ，即：`lipanpan58` 下面的v1的tag标签可以不打，默认是latest
+
+
+
+将镜像推送到 `docker hub` 中：
+```
+& docker push lipanpan58/centos7.4.1708:v1
+```
+
 
 
 # 参考地址
 https://www.cnblogs.com/kevingrace/p/9599988.html
+
+https://blog.csdn.net/weixin_41790086/article/details/102932185
+
+https://blog.csdn.net/haiyangyiba/article/details/88805764
+
+
+https://www.cnblogs.com/yangxiayi1987/p/11818130.html
