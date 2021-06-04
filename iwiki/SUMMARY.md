@@ -4,6 +4,7 @@
 
 ---
 * [Python](doc/python/README.md)
+    * [Python环境安装](doc/python/install.md)
     * [Python操作数据库](doc/python/db/README.md)
         * [Python操作Redis](doc/python/db/redis.md)
         * [Python操作MySQL](doc/python/db/mysql.md)
@@ -13,9 +14,9 @@
         * [模块化应用](doc/python/celery/application.md)
         * [周期任务](doc/python/celery/periodic_tasks.md)
         * [守护进程](doc/python/celery/daemonizing.md)
-
     * [Django](doc/python/django/README.md)
         * [安装](doc/python/django/install.md)
+
 ---
 
 * [Golang](doc/golang/README.md)
@@ -75,6 +76,10 @@
 ---
 
 * [Jenkins](doc/jenkins/README.md)
-    * [1.1 安装](doc/jenkins/install.md)
-    * [1.2 Jenkins集成GitHub](doc/jenkins/integrategithub.md)
+    * [安装](doc/jenkins/install.md)
+    * [Jenkins集成GitHub](doc/jenkins/integrategithub.md)
+---
+* [React](doc/react/README.md)
+  * [Antd3.x](doc/react/antd3/install.md)
+
 ---
