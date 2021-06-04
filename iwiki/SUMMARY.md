@@ -16,9 +16,7 @@
         * [守护进程](doc/python/celery/daemonizing.md)
     * [Django](doc/python/django/README.md)
         * [安装](doc/python/django/install.md)
-
 ---
-
 * [Golang](doc/golang/README.md)
     * [环境搭建](doc/golang/quickstart.md)
     * [变量](doc/golang/variable.md)
@@ -30,19 +28,15 @@
     * [切片](doc/golang/slice.md)
     * [Map](doc/golang/map.md)
     * [结构体](doc/golang/struct.md)
-
 ---
-
 * [Beego](doc/beego/README.md)
   * [环境搭建](doc/beego/install.md)
-
 ---
 * [JavaScript](doc/javascript/README.md)
     * [1.1 对象](doc/javascript/object.md)
     * [1.2 条件判断](doc/javascript/condition.md)
 
 ---
-
 * [Linux](doc/linux/README.md)
     * [1.1 环境变量](doc/linux/install.md)
     * [1.2 用户管理](doc/linux/user.md)
@@ -50,7 +44,6 @@
 ---
 * [小程序](doc/wx/README.md)
     * [1.1 环境搭建](doc/wx/install.md)
-
 ---
 * [MySQL](doc/mysql/REMADME.md)
     * [安装](doc/mysql/install.md)
@@ -58,14 +51,10 @@
 ---
 * [Redis](doc/redis/REMADME.md)
     * [安装](doc/redis/install.md)
-
 ---
-
 * [TIDB](doc/tidb/README.md)
     * [安装](doc/install.md)
-
 ---
-
 * [Docker](doc/docker/README.md)
   * [环境搭建](doc/docker/install.md)
   * [镜像](doc/docker/images.md)

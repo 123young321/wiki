@@ -8,4 +8,3 @@
 2) "_kombu.binding.celeryev"
 3) "_kombu.binding.celery"
 ```
-
