@@ -16,7 +16,7 @@
         * [守护进程](doc/python/celery/daemonizing.md)
     * [Django](doc/python/django/README.md)
         * [安装](doc/python/django/install.md)
-        * [Nginx](doc/python/django/deployment/uwsgi.md)
+        * [Nginx](doc/python/django/deployment/nginx.md)
         * [uWSGI](doc/python/django/deployment/uwsgi.md)
 ---
 * [Golang](doc/golang/README.md)
