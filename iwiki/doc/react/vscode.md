@@ -123,39 +123,46 @@ shouldComponentUpdate(nextProps, nextState) {
 }
 ```
 #### cwu - componentWillUpdate
+```
 //WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
 componentWillUpdate(nextProps, nextState) {
   |
 }
-
+```
 #### cdu - componentDidUpdate
+```
 componentDidUpdate(prevProps, prevState) {
   |
 }
-
+```
 #### cwun - componentWillUnmount
+```
 componentWillUnmount() {
   |
 }
-
+```
 #### cdc - componentDidCatch
+```
 componentDidCatch(error, info) {
   |
 }
-
+```
 #### gsbu - getSnapshotBeforeUpdate
+```
 getSnapshotBeforeUpdate(prevProps, prevState) {
   |
 }
-
+```
 #### ss - setState
+```
 this.setState({ | : | });
-
+```
 #### ssf - Functional setState
+```
 this.setState(prevState => {
   return { | : prevState.| }
 });
-
+```
 #### usf - Declare a new state variable using State Hook
 ```
 const [|, set|] = useState();
@@ -197,6 +204,32 @@ function | (|) {
   };
 }
 ```
+
+
+## javascript console utils
+官网地址：https://marketplace.visualstudio.com/items?itemName=whtouche.vscode-js-console-utils
+
+### 基本指令
+
+#### 选中变量
+
+指令：`cmd + shift + L`
+```
+console.log('usernameError: ', usernameError);
+```
+
+#### 非选中
+指令：`cmd + shift + L`
+
+```
+console.log()
+```
+
+#### 移除所有的console.log
+指令：`cmd + shift + D`
+
+
+
 
 
 
