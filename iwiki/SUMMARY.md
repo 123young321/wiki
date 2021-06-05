@@ -72,5 +72,6 @@
 ---
 * [React](doc/react/README.md)
   * [Antd3.x](doc/react/antd3/install.md)
+  * [Vscode](doc/react/vscode.md)
 
 ---
