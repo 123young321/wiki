@@ -1,9 +1,24 @@
 
 # React基于Ant-Design3.x环境搭建
 
+## 配置镜像源
+原本镜像
+```
+npm get registry
+```
+设置淘宝镜像
+```
+npm config set registry http://registry.npm.taobao.org/
+```
+镜像还原
+```
+npm config set registry https://registry.npmjs.org/
+```
+
 ## 安装脚手架
 ```
 npm install create-react-app -g
+
 ```
 ## 创建项目
 ```
