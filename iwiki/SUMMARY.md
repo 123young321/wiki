@@ -69,9 +69,10 @@
 * [Jenkins](doc/jenkins/README.md)
     * [安装](doc/jenkins/install.md)
     * [Jenkins集成GitHub](doc/jenkins/integrategithub.md)
+
 ---
 * [React](doc/react/README.md)
   * [Antd3.x](doc/react/antd3/install.md)
-  * [Vscode](doc/react/vscode.md)
+  * [IDE配置](doc/react/vscode.md)
 
 ---
