@@ -3,37 +3,19 @@
 ## MySQL部署
 
 ### 拉取mysql镜像
+
+镜像地址：https://hub.docker.com/r/centos/mysql-57-centos7
+
 ```python
 docker pull centos/mysql-57-centos7
 ```
-### 创建挂载目录
-+ 数据目录
-+ 日志
-+ 配置文件
-
+#### 创建容器
 ```
-
+docker run -di --name=mysql57_3306 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=lipanpan@3 centos/mysql-57-centos7
 ```
-
-### 创建容器
-```
-docker run -di --name=mysql57_3306_test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql
-```
-
 参数介绍：
 + -p 端口映射，格式为：`宿主机映射端口:容器运行端口`
 + -e 环境变量，代表添加环境变量： `MYSQL_ROOT_PASSWORD` 是root用户登录密码
-
-### 连接MySQL的方式
-#### 登录容器
-```
-docker exec -it mysql57_3306 /bin/bash
-mysql -uroot -p
-```
-#### 远程连接MySQL
-```
-
-```
 
 ## 部署Tomcat
 
@@ -64,8 +46,6 @@ docker pull nginx
 ```
 docker -di --name=nginx_80 -p 80:80 nginx
 ```
-
-
 ## Redis部署
 
 ### 拉取镜像
@@ -148,3 +128,17 @@ docker exec -it redis_6379 redis-cli -h 192.168.132.201 -p 6379 -a redis@6379@3
 + https://www.jianshu.com/p/4413f484789d
 https://www.cnblogs.com/zhzhlong/p/9465670.html
 https://blog.csdn.net/qq_43599835/article/details/103019447
+
+https://www.cnblogs.com/hg-super-man/p/10908216.html
+https://www.modb.pro/db/45946
+
+部署yum源安装ansible
+https://www.cnblogs.com/shenyuanhaojie/p/14138158.html
+
+
+
+https://blog.csdn.net/ksj367043706/article/details/88779121
+
+https://www.cnblogs.com/jesse131/p/13543308.html
+
+https://blog.52itstyle.vip/archives/2402/
