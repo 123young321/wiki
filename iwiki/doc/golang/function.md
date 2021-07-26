@@ -2,12 +2,15 @@
 # 函数
 
 ## 基本语法
+
+示例：
 ```
 func 函数名(参数名) 返回值{
   函数体
 }
 ```
-定义函数
+
+示例：定义函数
 ```
 // 定义发送邮件的函数
 func SendEmail(email string) bool {
@@ -15,7 +18,8 @@ func SendEmail(email string) bool {
 	return true
 }
 ```
-调用函数
+
+示例：调用函数
 ```
 func main() {
   // 调用函数
@@ -28,6 +32,7 @@ func main() {
 	}
 }
 ```
+
 ## 函数的参数
 
 ### 多个参数
@@ -37,13 +42,13 @@ func main() {
 func add(x, y int) int {
 	return x + y
 }
-
 ```
+
 ### 指针参数
 
-```
-```
+
 ### 函数做参数
+示例：
 ```
 // 定义函数
 func bar3(x, y int, op func(int, int) int) int {
@@ -53,7 +58,9 @@ func bar3(x, y int, op func(int, int) int) int {
 // 调用函数
 var ret3 = bar3(1, 2, add)
 ```
+
 ### 变长参数
+
 ```
 // 定义
 func bar(x ...int) int {
@@ -68,6 +75,7 @@ func bar(x ...int) int {
 // 调用
 var ret = bar(1, 2, 3)
 ```
+
 ## 函数的返回值
 
 示例：返回值
@@ -82,6 +90,7 @@ func foo(x string) bool {
 ```
 
 ### 函数多返回值
+示例：
 ```
 // 定义
 func calc(x, y int) (int, int) {

@@ -34,6 +34,7 @@
     * [Map](doc/golang/map.md)
     * [函数](doc/golang/function.md)
     * [结构体](doc/golang/struct.md)
+    * [接口](doc/golang/interface.md)
 
 ---
 * [Beego](doc/beego/README.md)
