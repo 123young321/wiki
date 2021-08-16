@@ -124,7 +124,18 @@ mysqld --initialize-insecure --user=mysql --basedir=/opt/mysql_cluster/mysql --d
 2021-05-17T05:50:07.843374Z 0 [ERROR] Aborting
 ```
 
+如果遇到以下错误：
+```JavaScript
+如果遇到以下报错
+/opt/mysql_cluster/mysql/bin/mysqld: error while loading shared libraries: libnuma.so.1: cannot open shared object file: No such file or directory
+```
 
+解决：
+```
+1.如果已经安装了libnuma.so.1，先卸载
+yum remove libnuma.so.1
+2.yum -y install numactl.x86_64
+```
 
 ## 编写配置文件
 
